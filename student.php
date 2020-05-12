@@ -116,6 +116,16 @@ class Student extends CI_Controller
 		echo "<pre>";
 		echo $json_after; 
 		
+
+		if(isset($_POST['Sname']) && !empty($_POST['Sname']))
+		{
+			$Sname=$_POST['Sname'];
+			$Sid=$_POST['Sid'];
+			$data=$this->student_model->update_student_name($Sname,$Sid);
+			$json_after=json_encode($data);
+		}
+		echo "<pre>";
+		echo $json_after; 
 	}
 	
 		  
